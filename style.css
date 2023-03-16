@@ -1,0 +1,148 @@
+body {
+  background: #8fc1cc;
+  box-sizing: border-box;
+}
+
+.snowman {
+  position: relative;
+  margin: 200px auto;
+  width: 600px;
+  /* height: 600px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: inset 0 0 10px black;
+}
+
+.snowman .face {
+  position: absolute;
+  width: 180px;
+  margin: 19px auto;
+  display: flex;
+  height: 180px;
+  border-radius: 100%;
+  border: 5px solid rgba(0, 0, 1, 0.2);
+  background: white;
+  z-index: 2;
+}
+
+.face .eyes {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: grid;
+  grid-template-columns: 15px 15px;
+  grid-template-rows: 15px 15px;
+  top: 50px;
+  background: black;
+  animation: rolleyes 3s infinite;
+}
+
+.face .eyes.left {
+  left: 30px;
+}
+.eyes .hole {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background: white;
+}
+
+.face .eyes.right {
+  right: 30px;
+}
+
+.face:hover {
+  transition: 1s;
+  transform: translate(50px, 390px);
+}
+.nose {
+  width: 0;
+  height: 0;
+  border-bottom: 20px solid transparent;
+  border-top: 20px solid transparent;
+  border-left: 60px solid coral;
+  border-right: 50px solid transparent;
+  margin-top: 90px;
+  margin-left: 80px;
+}
+
+/* .nose:hover {
+  transition: 3s;
+  transform: translate(20px, 50px);
+} */
+
+.snow-body {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  width: 370px;
+  height: 370px;
+  border-radius: 100%;
+  background: white;
+  top: 199px;
+  border: 5px solid rgba(0, 0, 1, 0.2);
+}
+.snow-body .button {
+  margin-top: 50px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: grid;
+  grid-template-columns: 15px 15px;
+  grid-template-rows: 15px 15px;
+  top: 50px;
+  background: black;
+  animation: rollbutton 3s infinite;
+}
+
+.snow-body .button .hole {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background: white;
+}
+
+.arm {
+  position: absolute;
+  width: 160px;
+  height: 10px;
+  background: brown;
+  margin: 230px auto;
+  z-index: 1;
+}
+
+.arm.left {
+  left: 5px;
+  transform: rotate(45deg);
+}
+
+.arm.right {
+  right: 5px;
+  transform: rotate(-45deg);
+}
+
+@keyframes rolleyes {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes rollbutton {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
